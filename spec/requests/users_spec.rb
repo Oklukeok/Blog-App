@@ -9,7 +9,6 @@ RSpec.describe 'users', type: :request do
   end
 end
 
-
 RSpec.describe 'render users', type: :request do
   it 'loads /users' do
     get '/users'

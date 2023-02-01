@@ -9,7 +9,6 @@ RSpec.describe 'posts', type: :request do
   end
 end
 
-
 RSpec.describe 'render posts', type: :request do
   it 'loads /posts' do
     get '/posts'
