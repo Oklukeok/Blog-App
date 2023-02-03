@@ -14,35 +14,35 @@
  *= require_self
  */
 body {
-    background-color: yellow;
+  background-color: yellow;
 }
 
 .app {
-    background-color: chartreuse;
+  background-color: chartreuse;
 }
 
 .users {
-    margin-top: 20px;
-    background-color: aqua;
-    display: flex;
+  margin-top: 20px;
+  background-color: aqua;
+  display: flex;
 }
 
-.users img{
-    width: 10%;
+.users img {
+  width: 10%;
 }
 
 .bio {
-    background-color: chartreuse;
+  background-color: chartreuse;
 }
 
 .posts-section {
-    background-color: red;
+  background-color: red;
 }
 
 .post {
-    background-color: darkorchid;
+  background-color: darkorchid;
 }
 
 .comments {
-    background-color: salmon;
+  background-color: salmon;
 }
