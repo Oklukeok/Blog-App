@@ -1,1 +1,20 @@
-<h1>Users INDEX</h1>
+<h1><%= @greetings %></h1>
+
+<div class="App">
+  <% @users.each do |manzana| %>
+    <%= link_to user_path(manzana) do%>
+   
+
+
+    <div class="users">
+      <img src=<%=manzana.photo%>>
+      <%= manzana.name %><br>
+      Number of posts: <%= manzana.posts.count%><br>
+    </div> 
+
+
+
+    <% end %>
+  <% end %>
+</div>
+
