@@ -1,20 +1,17 @@
-<h1><%= @greetings %></h1>
-
-<div class="App">
-  <% @users.each do |manzana| %>
-    <%= link_to user_path(manzana) do%>
-   
-
-
-    <div class="users">
-      <img src=<%=manzana.photo%>>
-      <%= manzana.name %><br>
-      Number of posts: <%= manzana.posts.count%><br>
-    </div> 
-
-
-
-    <% end %>
+<h1>Here is a list of posts for a given Users</h1>
+<h2> List of name's</h2>
+<section class='section-main'>
+  <% @users.each do |user| %>
+    <%= link_to user_path(user) do%>
+    <div class='general-container'>
+        <div class='container-users-photo'>
+          <img src="<%= user.photo%>"/>
+        </div>
+        <div class='container-users'>
+          <h2 class='user-name'> <%= user.name %></h2>
+          <span class='number-post'>Number of posts: <%=user.posts.count%></span>
+        </div>
+    </div>
+    <%end%>
   <% end %>
-</div>
-
+</section>

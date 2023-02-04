@@ -1,37 +1,31 @@
-<h1>Posts INDEX</h1>
-
-<div class="App">
- 
-     <div class="users">
-      <img src=<%=@user.photo%>>
-      <%= @user.name %><br>
-      Number of posts: <%= @user.posts.count%><br>
-    </div> 
-
-    <div class ="posts-section">
-        <h2> My Posts </h2>
-        <%@user.latest_posts.each do |post|%>
-        <%= link_to user_post_path(@user, post) do%>
-            <div class='post'>
-                <h4> Post # <%= post.id %> </h4>
-                <h4> Text: <%= post.text %> </h4>
-                <p> 
-                    Comments Counter :<%=post.comments_counter%>
-                    Likes Counter :<%=post.likes_counter %>
-                </p>
-
-                <div class="comments">
-                    <h3>Comments</h3>
-                    <%post.recent_comments.each do |comment|%>
-                        <p><%=comment.author.name%>: <%=comment.text%></p>
-                    <%end%>
-                </div>
-            </div>
-        <% end %>    
-        <% end %>
+<h1>Here is a list of posts for a given post</h1>
+<section>
+  <div class='container-photo-name-counter-post'>
+    <div class='photo-post'>
+        <img src="<%= @user.photo%>"/>
     </div>
-     <%=link_to user_posts_path(@user) do%>
-        <button>Pagination</button>
-     <% end %>   
-  
-</div>
+    <div class='name-post-counter-post'>
+        <h2 class='user-name-posts'> <%= @user.name %></h2>
+        <span class='number-post-posts'>Number of posts: <%= @user.posts.count%></span>
+    </div>
+  </div>
+    <%@user.posts.each do |post|%>
+    <%= link_to user_post_path(@user, post) do%>
+    <div class='container-id-text-counter-posts'>
+      <div>
+        <h3>Post #<%=post.id%></h3>
+        <div>
+          <p><%=post.text%></p>
+          <span class='number-counter-posts'>Comments: <%=@user.comments.count%> Likes: <%=@user.likes.count%></span>
+        </div>
+        <div>
+          <h3>List of Comments</h3>
+          <%post.recent_comments.each do |comment|%>
+          <p><%=comment.author.name%>: <%=comment.text%></p>
+          <%end%>
+       </div>
+      </div>
+  </div>
+  <%end%>
+<%end%>
+</section>
