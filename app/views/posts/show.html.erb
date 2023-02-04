@@ -1,1 +1,14 @@
 <h1>Posts SHOW</h1>
+
+<div class="App">
+     <div class="post">
+      <h3>Post #<%=@post.id%> by <%=@post.author.name%></h3>
+       <span class='number-counter-show-posts'>Comments: <%=@post.comments_counter%> Likes: <%=@post.likes_counter%></span>
+      <p><%=@post.text%></p>
+    </div>
+    <div class='comments'>
+      <%@post.comments.each do |comment|%>
+      <p><%=comment.author.name%>: <%=comment.text%></p>
+    <%end%>
+  </div>
+</div>

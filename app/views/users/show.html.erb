@@ -1,1 +1,33 @@
 <h1>Users SHOW</h1>
+
+<div class="App">
+ 
+     <div class="users">
+      <img src=<%=@user.photo%>>
+      <%= @user.name %><br>
+      Number of posts: <%= @user.posts.count%><br>
+    </div> 
+
+    <div class="bio">
+        <h2>Bio</h2>
+        <p><%= @user.bio %></p>
+    </div>
+
+    <div class ="posts-section">
+        <h2> My Posts </h2>
+        <%@user.latest_posts.each do |post|%>
+            <div class='post'>
+                <h4> Post # <%= post.id %> </h4>
+                <h4> Text: <%= post.text %> </h4>
+                <p> 
+                    Comments Counter :<%=post.comments_counter %>
+                    Likes Counter :<%=post.likes_counter %>
+                </p>
+            </div>
+        <% end %>
+    </div>
+     <%=link_to user_posts_path(@user) do%>
+        <button>See All Posts</button>
+     <% end %>   
+  
+</div>

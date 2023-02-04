@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background-color: yellow;
+}
+
+.app {
+  background-color: chartreuse;
+}
+
+.users {
+  margin-top: 20px;
+  background-color: aqua;
+  display: flex;
+}
+
+.users img {
+  width: 10%;
+}
+
+.bio {
+  background-color: chartreuse;
+}
+
+.posts-section {
+  background-color: red;
+}
+
+.post {
+  background-color: darkorchid;
+}
+
+.comments {
+  background-color: salmon;
+}
