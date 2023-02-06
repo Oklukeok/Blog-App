@@ -1,0 +1,8 @@
+<h1>Create Comment</h1>
+<%= form_with url:comments_path(@comment), model: @comment do |form| %>
+    <div>
+    <%= form.label :text %>
+    <%= form.text_area :text %>
+    </div>
+  <%= form.submit "Create Comment" %>
+<% end %>

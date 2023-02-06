@@ -1,48 +1,146 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
-body {
-  background-color: yellow;
-}
-
-.app {
-  background-color: chartreuse;
-}
-
-.users {
-  margin-top: 20px;
-  background-color: aqua;
+.general-container {
   display: flex;
+  flex-direction: row;
+  width: 90%;
+  margin-top: 3%;
 }
 
-.users img {
-  width: 10%;
+.container-users {
+  border: 1px solid black;
+  width: 95%;
+  margin-left: 5%;
 }
 
-.bio {
-  background-color: chartreuse;
+.container-users-photo {
+  width: 13%;
+  border: 1px solid black;
+  margin-left: 2%;
 }
 
-.posts-section {
-  background-color: red;
+.container-users-photo img {
+  width: 80%;
+  margin: auto;
 }
 
-.post {
-  background-color: darkorchid;
+.number-post {
+  margin-left: 65%;
+  margin-bottom: 5%;
 }
 
-.comments {
-  background-color: salmon;
+.user-name {
+  margin-left: 10%;
+}
+
+.container-show-users {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+.cont-photo-show-users {
+  border: 1px solid black;
+  width: 13%;
+  margin-left: 2%;
+}
+
+.cont-name-numbers-post-show-users {
+  border: 1px solid black;
+  width: 95%;
+  margin-left: 2%;
+}
+
+.cont-bio-show-users {
+  border: 1px solid black;
+  width: 88%;
+  margin-left: 2%;
+  margin-top: 3%;
+}
+
+.container-id-text-counter {
+  border: 1px solid black;
+  margin-top: 3%;
+  width: 88%;
+  margin-left: 2%;
+}
+
+.button-see-all-posts {
+  margin-top: 3%;
+  margin-left: 44%;
+}
+
+.container-photo-name-counter-post {
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+}
+
+.photo-post {
+  border: 1px solid black;
+  width: 13%;
+  margin-left: 2%;
+}
+
+.name-post-counter-post {
+  border: 1px solid black;
+  width: 95%;
+  margin-left: 2%;
+}
+
+.number-post-posts {
+  margin-left: 65%;
+  margin-bottom: 5%;
+}
+
+.user-name-posts {
+  margin-left: 10%;
+}
+
+.number-post-posts-show {
+  margin-left: 65%;
+  margin-bottom: 5%;
+}
+
+.user-name-posts-show {
+  margin-left: 10%;
+}
+
+.container-id-text-counter-posts {
+  border: 1px solid black;
+  margin-top: 3%;
+  width: 88%;
+  margin-left: 2%;
+  padding-left: 3.5%;
+  margin-bottom: 3%;
+}
+
+.number-counter-posts {
+  margin-left: 65%;
+  text-decoration: none;
+}
+
+.container-id-text-counter-show-posts {
+  border: 1px solid black;
+  margin-top: 3%;
+  width: 88%;
+  margin-left: 2%;
+  padding-left: 3.5%;
+  margin-bottom: 3%;
+}
+
+.container-recent-coment-show-posts {
+  border: 1px solid black;
+  margin-top: 3%;
+  width: 88%;
+  margin-left: 2%;
+  padding-left: 3.5%;
+  margin-bottom: 3%;
+}
+
+.number-counter-show-posts {
+  margin-left: 65%;
+}
+
+.form-create-like {
+  margin-left: 46%;
+  margin-top: 2%;
 }
