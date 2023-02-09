@@ -164,6 +164,19 @@ You can deploy this project using:
 - GitHub: [@Oklukeok](https://github.com/Oklukeok)
 - LinkedIn: [LinkedIn](https://linkedin.com/in/lucas-bermudez)
 
+👤 **Lucca Micale**
+
+- GitHub: [@luccamicale](https://github.com/luccamicale)
+- LinkedIn: [luccamicale](https://www.linkedin.com/in/luccamicale/)
+- Twitter: [@luccamicale_](https://twitter.com/LuccaMicale_)
+
+👤 **Odette Gleen**
+
+- GitHub: [@Gleennkar](https://github.com/Gleennkar)
+- Twitter: [@gleeny24](https://twitter.com/twitterhandle)
+- LinkedIn: [@gleeny](https://www.linkedin.com/in/gleeny-nkar-aa3917182)
+
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
