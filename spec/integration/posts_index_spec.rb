@@ -49,5 +49,9 @@ RSpec.describe 'Post index page', type: :feature do
     it 'should not show a pagination button' do
       expect(page.body).not_to have_content('Pagination')
     end
+
+    it 'should show the user profile picture' do
+      expect(page.body).to include(@user.photo)
+    end
   end
 end

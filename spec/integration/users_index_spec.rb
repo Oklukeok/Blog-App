@@ -23,5 +23,10 @@ RSpec.describe 'User index', type: :feature do
       expect(page).to have_content('Number of posts: 0')
       expect(page).to have_content('Number of posts: 1')
     end
+
+    it "When I click on a user, should redirected to that user's show page." do
+      click_link('Lucca')
+      expect(page).to have_current_path(user_path(@user.id))
+    end
   end
 end
