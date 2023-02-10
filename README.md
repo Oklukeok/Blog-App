@@ -170,6 +170,7 @@ You can deploy this project using:
 - LinkedIn: [luccamicale](https://www.linkedin.com/in/luccamicale/)
 - Twitter: [@luccamicale_](https://twitter.com/LuccaMicale_)
 
+
 👤 **Odette Gleen**
 
 - GitHub: [@Gleennkar](https://github.com/Gleennkar)
