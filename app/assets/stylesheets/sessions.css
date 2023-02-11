@@ -1,0 +1,22 @@
+.log-in-box {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.field {
+  border: 3px solid black;
+  width: 100%;
+  padding: 1em;
+  margin-block: 1em;
+}
+
+input::placeholder {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: black;
+}
+
+.form-btn {
+  width: 100%;
+}

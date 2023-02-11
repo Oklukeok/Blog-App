@@ -1,32 +1,28 @@
 class PostsController < ApplicationController
   def index
-    @user = User.includes(:posts, posts: [:comments, { comments: [:author] }]).find(params[:user_id])
-  end
-
-  def show
     @user = User.find(params[:user_id])
-    @post = Post.find(params[:id])
+    @posts = @user.posts.includes(:comments)
+    @comments = Comment.all
   end
 
   def new
-    @post = Post.new(id: current_user.id)
+    @post = Post.new
   end
 
   def create
-    @post = @current_user.posts.new(post_params)
-
-    if @post.save
-      redirect_to user_path(current_user.id)
-    elsif @like.save
-      redirect_to user_path(current_user), notice: 'like was successfully created.'
-    else
-      render :new
-    end
+    @post = Post.new(post_params)
+    @post.author_id = current_user
+    flash.now[:notice] = 'Comment created successfully' if @post.save!
+    redirect_to user_path(current_user)
   end
 
-  private
+  def show
+    @post = Post.find(params[:id])
+    @user = User.find(params[:user_id])
+    @comments = Comment.all
+  end
 
   def post_params
-    params.require(:post).permit(:title, :text).merge(author_id: current_user.id)
+    params.require(:post).permit(:title, :text)
   end
 end

@@ -1,0 +1,28 @@
+.user-bio {
+  border: 3px solid black;
+}
+
+.post-card {
+  border: 3px solid black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 2em;
+}
+
+.comments-container {
+  margin-top: 0.3em;
+  border: 3px solid black;
+  padding: 2em;
+}
+
+.post-button {
+  align-self: center;
+}
+
+button {
+  padding: 1em;
+  border: 3px solid black;
+  align-self: center;
+  cursor: pointer;
+}

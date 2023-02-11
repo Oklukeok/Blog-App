@@ -1,27 +1,19 @@
-<h1>Here is a list of posts for a given post</h1>
-<section>
-  <div class='container-id-text-counter-show-posts'>
-    <div>
-      <h3>Post #<%=@post.id%> by <%=@post.author.name%></h3>
+<div class="posts-container">
+  <div class="post-data">
+    <div class="post-title">
+      <h2>Post #<%= @post.id %> by <%=@user.name%></h2>
+      <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
     </div>
-    <div>
-      <span class='number-counter-show-posts'>Comments: <%=@user.comments.count%> Likes: <%=@user.likes.count%></span>
-      <p><%=@post.text%></p>
-    </div>
+    <h4><%= @post.title %><h4>
+    <p><%= @post.text %></p>
   </div>
-  <div class='container-recent-coment-show-posts'>
-      <%@post.comments.each do |comment|%>
-      <p><%=comment.author.name%>: <%=comment.text%></p>
-    <%end%>
-  </div>
-  <div class='button-see-all-posts'>
-    <%=link_to new_comment_path do%>
-    <button>Create New Comment</button>
-  <%end%>
-  </div>
-  <div class='form-create-like'>
-    <%= form_with url: user_post_likes_path(@post,@user), model: @like , method: :post ,scope: :like do |f| %>
-      <%= f.submit "Create Like" %>
+  <%= render "shared/add_like"%>
+  <div class="comments-container">
+    <% @comments.each do |comment| %>
+      <% if comment.post_id == @post.id %>
+      <h4>Username:<%= comment.user.name %> => <%= comment.text %></h4>
+      <%end%>
     <% end %>
   </div>
-</section>
+ <%= render "shared/add_comment"%>
+</div>

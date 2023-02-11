@@ -1,8 +1,22 @@
 class LikesController < ApplicationController
-  def create
-    @like = Like.new(author_id: current_user.id, post_id: params[:post_id])
-    return unless @like.save
+  def new
+    @like = Like.new
+  end
 
-    redirect_to user_path(current_user), notice: 'Like was successfully created.'
+  def create
+    @like = Like.new(like_params)
+    @like.author_id = current_user
+
+    if @like.save
+      redirect_to post_show_path(current_user)
+    else
+      flash.now[:alert] = 'Like creation failed'
+    end
+  end
+
+  private
+
+  def like_params
+    params.require(:like).permit(:post_id)
   end
 end
