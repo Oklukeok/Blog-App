@@ -1,31 +1,25 @@
-<h1>Here is a list of posts for a given post</h1>
-<section>
-  <div class='container-photo-name-counter-post'>
-    <div class='photo-post'>
-        <img src="<%= @user.photo%>"/>
-    </div>
-    <div class='name-post-counter-post'>
-        <h2 class='user-name-posts'> <%= @user.name %></h2>
-        <span class='number-post-posts'>Number of posts: <%= @user.posts.count%></span>
-    </div>
-  </div>
-    <%@user.posts.each do |post|%>
-    <%= link_to user_post_path(@user, post) do%>
-    <div class='container-id-text-counter-posts'>
-      <div>
-        <h3>Post #<%=post.id%></h3>
+ <%= render "shared/user_data"%>
+ <div class="posts-container">
+  <% @posts.each_with_index do |post, index| %>
+    <%= link_to post_show_path(:id => post.id) do %>
+      <div class="post-card">
         <div>
-          <p><%=post.text%></p>
-          <span class='number-counter-posts'>Comments: <%=@user.comments.count%> Likes: <%=@user.likes.count%></span>
+          <h2>Post <%= index + 1 %></h2>
+          <p>Title: <%= post.title %></p>
+          <p><%= post.text %></p>
         </div>
-        <div>
-          <h3>List of Comments</h3>
-          <%post.recent_comments.each do |comment|%>
-          <p><%=comment.author.name%>: <%=comment.text%></p>
-          <%end%>
-       </div>
+        <div class="post-counter">
+          <span>Comments: <%= post.comments_counter %></span>
+          <span>Likes: <%= post.likes_counter %></span>
+        </div>
       </div>
-  </div>
-  <%end%>
-<%end%>
-</section>
+      <div class="comments-container">
+        <% @comments.each do |comment| %>
+          <% if comment.post_id == post.id %>
+          <h4>Post_ID:<%=  comment.post_id %>:<%= comment.text %></h4>
+          <%end%>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+ </div>

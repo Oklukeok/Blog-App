@@ -1,39 +1,25 @@
-<h1>Here is a list of posts for a given show user</h1>
-<section>
-  <div class='container-show-users'>
-    <div class='cont-photo-show-users'>
-      <img src="<%= @user.photo%>"/>
+<div class="users-container">
+  <%= render "shared/user_data" %>
+    <div class="user-bio">
+      <span>Bio</span>
+      <p><%= @user.bio %></p>
     </div>
-    <div class='cont-name-numbers-post-show-users'>
-      <h2 class='user-name-posts-show'> <%= @user.name %></h2>
-      <span class='number-post-posts-show'>Number of posts: <%=@user.posts.count%></span>
+    <div class="posts-container">
+      <% @user.latest_posts.each_with_index do |post, index| %>
+        <div class="post-card">
+          <div>
+            <h2>Post: <%= index + 1 %></h2>
+            <p>Title: <%= post.title %></p>
+            <p><%= post.text %></p>
+          </div>
+          <div>
+            <span>Comments: <%= post.comments_counter %></span>
+            <span>Likes: <%= post.likes_counter %></span>
+          </div>
+
+        </div>
+      <% end %>
+        <%= link_to "<button>See All Posts</button>".html_safe, post_path_url(@user), :class => 'post-button' %>
+        <%= link_to "<button>Create a new Post</button>".html_safe, new_post_path, :class => 'post-button' %>
     </div>
-  </div>
-  <div>
-    <div class='cont-bio-show-users'>
-      <h3> Biography :<%= @user.bio %></h3>
-    </div>
-  </div>
-  <div class='cont-id-text-counter-shows-users'>
-    <%@user.latest_posts.each do |post|%>
-      <div class='container-id-text-counter'>
-        <h4> Post # <%= post.id %> </h4>
-        <h4> Text: <%= post.text %> </h4>
-        <p> 
-          Comments Counter :<%=@user.comments.count %>
-          Likes Counter :<%=@user.likes.count %>
-        </p>
-      </div>
-    <%end%>
-  </div>
-  <div class='button-see-all-posts'>
-    <%=link_to user_posts_path(@user) do%>
-    <button>See all posts</button>
-  <%end%>
-  </div>
-  <div class='button-see-all-posts'>
-    <%=link_to new_post_path do%>
-    <button>Create New Post</button>
-  <%end%>
-  </div>
-</section>
+</div>

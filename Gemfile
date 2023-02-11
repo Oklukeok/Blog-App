@@ -1,7 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
+gem 'rubocop', '>= 1.0', '< 2.0'
+
+gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
+
 ruby '3.1.3'
+
+gem 'devise'
+gem 'letter_opener'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4', '>= 7.0.4.2'
@@ -50,10 +57,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'capybara'
-  gem 'database_cleaner'
   gem 'debug', platforms: %i[mri mingw x64_mingw]
-  gem 'webdrivers'
 end
 
 group :development do
@@ -69,15 +73,8 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  # gem 'capybara'
+  gem 'capybara'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
-  # gem 'webdrivers'
+  gem 'webdrivers'
 end
-
-gem 'rubocop', '>= 1.0', '< 2.0'
-group :development, :test do
-  gem 'rspec-rails', '~> 6.0', '>= 6.0.1'
-  #  gem 'selenium-webdriver'
-  # gem 'webdrivers'
-end
-gem 'rails-controller-testing'

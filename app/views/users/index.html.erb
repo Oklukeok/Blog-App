@@ -1,17 +1,14 @@
-<h1>Here is a list of posts for a given Users</h1>
-<h2> List of name's</h2>
-<section class='section-main'>
+<%= render "shared/header" %>
+<div class="users-container">
   <% @users.each do |user| %>
-    <%= link_to user_path(user) do%>
-    <div class='general-container'>
-        <div class='container-users-photo'>
-          <img src="<%= user.photo%>"/>
+    <%= link_to user_path(user), :class => 'user-button' do %>
+      <div class="user-card">
+         <img src="<%= user.photo %>" class="user-image" alt="user-image">
+        <div class="user-data">
+          <h1><%= user.name %></h1>
+          <span>Number of posts: <%= user.posts_counter %></span>
         </div>
-        <div class='container-users'>
-          <h2 class='user-name'> <%= user.name %></h2>
-          <span class='number-post'>Number of posts: <%=user.posts.count%></span>
-        </div>
-    </div>
-    <%end%>
+      </div>
+    <% end %>
   <% end %>
-</section>
+</div>

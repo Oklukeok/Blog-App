@@ -1,0 +1,30 @@
+.users-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.user-card {
+  display: flex;
+  gap: 2em;
+}
+
+.user-data {
+  display: flex;
+  border: 3px solid black;
+  width: 85%;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 2em;
+  padding-inline: 2em;
+}
+
+.user-image {
+  width: 15%;
+  border: 3px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}

@@ -1,0 +1,7 @@
+<div class="user-card">
+  <%= image_tag @user.photo, :class => "user-image", :alt => "user-image" %>
+  <div class="user-data">
+    <h1><%= @user.name %></h1>
+    <span>Number of posts: <%= @user.posts_counter %></span>
+  </div>
+</div>
